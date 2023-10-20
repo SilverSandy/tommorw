@@ -33,11 +33,9 @@ $md-margin: 30px;
 $md-max-container: 960px + $md-margin * 2;
 
 $lg-breakpoint: 1200px;
-$lg-column: 12;
+$lg-columns: 12;
 $lg-unit: 75px;
-$la-max-container: ($lg-unit + $gutter) * $lg-column;
-
-@debug ($lg-unit + $gutter) * $lg-column;
+$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
 
 .container {
   width: 100%;
@@ -63,7 +61,7 @@ $la-max-container: ($lg-unit + $gutter) * $lg-column;
 
   // 미디어쿼리 768px 이상만 적용되어야해서
 
-  @media screen and (min-width: $lg-breakpoint) {
+  @media screen and (min-width: $md-breakpoint) {
     max-width: $md-max-container;
     padding: 0 $md-margin;
 
@@ -78,7 +76,7 @@ $la-max-container: ($lg-unit + $gutter) * $lg-column;
     max-width: $lg-max-container;
     padding: 0;
 
-    @for $i from 1 through $lg-columns {
+    @for $i from 1 through $lg-columnscu {
       .col-lg-#{$i} {
         width: ($lg-unit + $gutter) * $i;
       }
